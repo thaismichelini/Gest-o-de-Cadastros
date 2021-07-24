@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" rel="stylesheet">
+        <title>Home Design</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </head>
+<body>
+    <header class="registerheader">
+        <img src="assets/logo.png" alt="logo">
+    </header>
+    <main>
+        <div class="buttons">
+            <button id="cliente" type="button" class="botaocadastro" data-toggle="modal" data-target="#modalCliente">CADASTRAR CLIENTE</button>
+            <button id="produto" type="button" class="botaocadastro" data-toggle="modal" data-target="#modalProduto">CADASTRAR PRODUTO</button>
+        </div>
+        <!-- Formulário Cadastrar Cliente -->
+        <div class="modal fade" id="modalCliente">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title font-modal">Cadastro de Cliente</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="formCliente" onsubmit="cadastrarCliente()" action="#">
+                            <div class="row">
+                                <label for="endereco" class="form-group ml-3">Dados Pessoais: </label>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <input type="text" required="required" class="form-control mb-2 mr-sm-2" id="nome-cliente" placeholder="Nome">
+                                </div>
+                                <div class="col">
+                                    <input type="email" required="required" class="form-control mb-2 mr-sm-2" id="email" placeholder="E-mail">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <input type="tel" required="required" class="form-control mb-2 mr-sm-2" id="celular" placeholder="Celular">
+                                </div>
+                                <div class="col">
+                                    <input type="text" required="required" class="form-control mb-2 mr-sm-2" id="cpf" placeholder="CPF">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <label for="endereco" class="form-group ml-3"><br>Endereço: </label>
+                            </div>
+                            <div class="row">
+                                <div class="col"><input type="text" required="required" class="form-control mb-2 mr-sm-2" id="end-rua" placeholder="Endereço"></div>
+                            </div>    
+                            <div class="row">
+                                <div class="col">
+                                    <input type="text" required="required" class="form-control mb-2 mr-sm-2" id="end-numero" placeholder="Número">
+                                </div>
+                                <div class="col">
+                                    <input type="text" class="form-control mb-2 mr-sm-2" id="end-comp" placeholder="Complemento">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <input type="text" required="required" class="form-control mb-2 mr-sm-2" id="end-bairro" placeholder="Bairro">
+                                </div>
+                                <div class="col">
+                                    <input type="text" required="required" class="form-control mb-2 mr-sm-2" id="end-cep" placeholder="CEP">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <input type="text" required="required" class="form-control mb-2 mr-sm-2" id="end-cidade" placeholder="Cidade">
+                                </div>
+                                <div class="col">
+                                    <input type="text" required="required" class="form-control mb-2 mr-sm-2" id="end-estado" placeholder="Estado">
+                                </div>
+                            </div>
+                                <input type="submit" class="btn btn-success float-right mt-2" value="Confirmar dados">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Formulário Cadastrar Produto -->
+        <div class="modal fade" id="modalProduto">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title font-modal">Cadastro de Produto</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="formProduto" onsubmit="cadastrarProduto()" action="#">
+                            <div class="row">
+                                <label for="dadosdoproduto" class="form-group ml-3">Dados do produto: </label>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <input type="text" required="required" class="form-control mb-2 mr-sm-2" id="nome-prod" placeholder="Nome do produto">
+                                </div>
+                                <div class="col">
+                                    <input type="text" required="required" class="form-control mb-2 mr-sm-2" id="codigo" placeholder="Código">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <input type="tel" class="form-control mb-2 mr-sm-2" id="nserie" placeholder="Número de Série">
+                                </div>
+                                <div class="col">
+                                    <input type="text" required="required" class="form-control mb-2 mr-sm-2" id="custo" placeholder="Custo unitário">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <input type="text" required="required" class="form-control mb-2 mr-sm-2" id="precovenda" placeholder="Preço de Venda">
+                                </div>
+                                <div class="col">
+                                    <input type="text" class="form-control mb-2 mr-sm-2" id="fornecedor" placeholder="Fornecedor">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <input type="text" required="required" class="form-control mb-2 mr-sm-2" id="qntd" placeholder="Quantidade">
+                                </div>
+                                <div class="col">
+                                    <input type="text" class="form-control mb-2 mr-sm-2" id="categoria" placeholder="Categoria">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <textarea class="form-control mb-2 mr-sm-2" rows= 3 id="desc" placeholder="Descrição"></textarea>
+                                </div>
+                            </div>
+                                <input type="submit" class="btn btn-success float-right mt-2" value="Confirmar dados">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </main>
+</body>
+</html>
